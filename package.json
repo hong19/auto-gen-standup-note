@@ -1,7 +1,18 @@
 {
   "name": "auto-gen-standup-note",
   "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack --progress --config build/webpack.config.js --mode=development",
+    "build": "webpack --progress --config build/webpack.config.js --mode=production"
+  },
   "dependencies": {
     "nodemw": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   }
 }
