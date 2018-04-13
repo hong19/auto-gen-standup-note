@@ -1,0 +1,7 @@
+{
+  "name": "auto-gen-standup-note",
+  "version": "0.0.1",
+  "dependencies": {
+    "nodemw": "^0.12.0"
+  }
+}
