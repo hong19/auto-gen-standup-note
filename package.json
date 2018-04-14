@@ -2,6 +2,7 @@
   "name": "auto-gen-standup-note",
   "version": "0.0.1",
   "scripts": {
+    "start": "node dist/app.bundle.js",
     "dev": "webpack --progress --config build/webpack.config.js --mode=development",
     "build": "webpack --progress --config build/webpack.config.js --mode=production"
   },
