@@ -1,0 +1,7 @@
+{
+  "protocol": "http",
+  "server": "wiki server domain",
+  "path": "/mediawiki",
+  "username": "your username",
+  "password": "your password"
+}
