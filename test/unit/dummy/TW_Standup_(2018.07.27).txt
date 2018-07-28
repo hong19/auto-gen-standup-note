@@ -1,0 +1,41 @@
+==Link==
+https://hangouts.google.com/hangouts/_/kloudless.com/tech-standup
+
+==Full-Time==
+
+=== ymlu ===
+; DONE:
+* [DEV-1299] Restrict API requests based on license key service scope
+** Replace 'audit' API object with 'events'.
+** Modify the migration to correctly populate scopes based on `allow_events` and `allow_admin`.
+** Remove `allow_events` and `allow_admin` from LicenseKey.
+** Fix where `allow_events` and `allow_admin` are used and relating tests.
+* Re-reviewing jord's MR.
+
+; TODO:
+* Pending:
+** [04/16] Add multi-account tests.
+* [05/16] Move Service.needs_unique_user_defined_admin_key to static tracker.
+* [06/28] Apply some unique constraint related changes on top of jord's branch (jord/DEV-1248).
+* [07/09] Write spec for Slack events.
+* [07/27] Finish re-reviewing jord's MR.
+
+; OBSTACLES:
+Forget which parts are reviewed previously x.x
+
+=== jord ===
+; DONE:
+* Re-review Andy's MR on Friendly error message for connecting service out of dev plan
+
+* [6/22] [DEV-1248] [DEV-1250] FeatureTracker YAML loading and Support account specific override for feature tracker
+** Resolve all discussions
+
+* Look into Cython problem on decorated classmethod
+
+;TODO
+
+* Account Property endpoints
+** Implementation
+
+
+; OBSTACLES:

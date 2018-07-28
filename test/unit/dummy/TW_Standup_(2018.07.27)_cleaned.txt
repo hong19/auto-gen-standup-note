@@ -1,0 +1,31 @@
+==Link==
+https://hangouts.google.com/hangouts/_/kloudless.com/tech-standup
+
+==Full-Time==
+
+=== ymlu ===
+; DONE:
+
+
+; TODO:
+* Pending:
+** [04/16] Add multi-account tests.
+* [05/16] Move Service.needs_unique_user_defined_admin_key to static tracker.
+* [06/28] Apply some unique constraint related changes on top of jord's branch (jord/DEV-1248).
+* [07/09] Write spec for Slack events.
+* [07/27] Finish re-reviewing jord's MR.
+
+; OBSTACLES:
+Forget which parts are reviewed previously x.x
+
+=== jord ===
+; DONE:
+
+
+;TODO
+
+* Account Property endpoints
+** Implementation
+
+
+; OBSTACLES:

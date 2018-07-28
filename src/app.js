@@ -1,5 +1,6 @@
 import bot from 'nodemw';
 import config from '../config/config';
+import regex from 'regex';
 
 // pass configuration object
 const client = new bot({
@@ -25,11 +26,16 @@ client.getArticle('Meeting_Minutes', function (err, data) {
   if (err) {
     console.error(err);
   } else {
-    console.log(data);
-    let content = data;
-    // const re = /^\*[\b]\[\[TW\bStandup\b\(.*\)]]/;
-    const re = /TW Standup/;
-    console.log(content.search(re));
+    let title = regex.findLastTwStandUpTitle(data);
+    title = title.replace(/ /g, '_');
+    console.log(title);
+    client.getArticle(title, function (err, data) {
+      if (err) {
+        console.error(err);
+      } else {
+        const cleanedContent = regex.cleanDoneSection(data);
+      }
+    });
   }
 });
 
