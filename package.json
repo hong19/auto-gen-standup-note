@@ -17,5 +17,21 @@
     "jest": "^22.4.3",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/test/"
+    ],
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/test/coverage/",
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js",
+      "!**/node_modules/**",
+      "!<rootDir>/test/**"
+    ]
   }
 }
