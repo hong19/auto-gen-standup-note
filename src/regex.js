@@ -5,7 +5,10 @@ export default {
     if (!found) {
       console.error("Can't find any TW StandUp")
     }
-    return found[0];
+    return {
+      title: found[0],
+      index: found.index
+    };
   },
   cleanDoneSection(content) {
     const re = /; DONE:(.|\n)*?;/g;

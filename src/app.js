@@ -1,6 +1,7 @@
 import bot from 'nodemw';
 import config from '../config/config';
 import regex from 'regex';
+import utils from 'utils';
 
 // pass configuration object
 const client = new bot({
@@ -26,14 +27,15 @@ client.getArticle('Meeting_Minutes', function (err, data) {
   if (err) {
     console.error(err);
   } else {
-    let title = regex.findLastTwStandUpTitle(data);
+    let {title, index} = regex.findLastTwStandUpTitle(data);
     title = title.replace(/ /g, '_');
-    console.log(title);
+
     client.getArticle(title, function (err, data) {
       if (err) {
         console.error(err);
       } else {
         const cleanedContent = regex.cleanDoneSection(data);
+        let todayTitle = utils.generateTodayTitle();
       }
     });
   }

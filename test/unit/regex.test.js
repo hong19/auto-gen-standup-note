@@ -10,7 +10,10 @@ describe('Parsing', () => {
     const title = regex.findLastTwStandUpTitle(content);
 
     // assert
-    expect(title).toBe('TW Standup (2018.05.11)');
+    expect(title).toEqual({
+      title: 'TW Standup (2018.05.11)',
+      index: 354
+    });
   });
 });
 
