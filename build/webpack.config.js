@@ -1,6 +1,6 @@
 var path = require('path');
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -27,6 +27,9 @@ module.exports = {
   },
   stats: {
     colors: true
+  },
+  optimization: {
+    minimize: false
   },
   mode: 'development',
   devtool: 'source-map'
