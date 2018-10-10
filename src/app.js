@@ -20,14 +20,14 @@ function handleResponse(err, data) {
   }
 }
 
-// client.logIn(config.username, config.password, handleResponse);
+client.logIn(config.username, config.password, handleResponse);
 
-client.getArticle('Meeting_Minutes', function (err, data) {
+client.getArticle('Meeting_Minutes', function (err, MeetingMinutesContent) {
   // error handling
   if (err) {
     console.error(err);
   } else {
-    let {title, index} = regex.findLastTwStandUpTitle(data);
+    let {title, index} = regex.findLastTwStandUpTitle(MeetingMinutesContent);
     title = title.replace(/ /g, '_');
 
     client.getArticle(title, function (err, data) {
@@ -35,7 +35,21 @@ client.getArticle('Meeting_Minutes', function (err, data) {
         console.error(err);
       } else {
         const cleanedContent = regex.cleanDoneSection(data);
-        let todayTitle = utils.generateTodayTitle();
+        const todayTitle = utils.generateTodayTitle();
+        const updatedMeetingMinutesContent = regex.generateNewMeetingMinutes(MeetingMinutesContent, index, todayTitle)
+        client.edit('Meeting_Minutes', updatedMeetingMinutesContent, null, false, function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            client.edit(todayTitle.replace(/ /g, '_'), cleanedContent, null, false, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+
+              }
+            });
+          }
+        })
       }
     });
   }
